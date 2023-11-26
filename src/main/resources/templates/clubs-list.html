@@ -15,12 +15,13 @@
                             <p class="lead fw-normal text-muted mb-0">Groups of passionate near you</p>
                         </div>
                         <div class="row gx-5" >
-                            <div class="col-lg-6" th:each="club :${clubs}">
-                                <div class="position-relative mb-5">
+                            <div class="col-lg-6 mb-4" th:each="club :${clubs}">
+                                <div class="position-relative mb-3">
                                     <img alt="..." class="img-fluid image-club rounded-3 mb-3" th:src="${club.photoURL}"/>
-                                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!"
-                                       th:text="${club.title}">Project name</a>
+                                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#"
+                                       th:text="${club.title}" />
                                 </div>
+                                <a class="btn btn-primary" th:href="@{clubs/{clubId}/edit(clubId=${club.id})}" >Edit</a>
                             </div>
                         </div>
                     </div>
