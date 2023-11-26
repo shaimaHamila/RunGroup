@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+
+>
+
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Page Content-->
+            <section layout:fragment="body" class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Runners</h1>
+                        <p class="lead fw-normal text-muted mb-0">Runners found in your area!</p>
+                    </div>
+                    <div class="row gx-5" >
+                        <div class="col-lg-6" th:each="club :${clubs}">
+                            <div class="position-relative mb-5">
+                                <img alt="..." class="img-fluid image-club rounded-3 mb-3" th:src="${club.photoURL}"/>
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!"
+                                   th:text="${club.title}">Project name</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
