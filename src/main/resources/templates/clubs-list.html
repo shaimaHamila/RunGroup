@@ -21,7 +21,10 @@
                                     <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#"
                                        th:text="${club.title}" />
                                 </div>
-                                <a class="btn btn-primary" th:href="@{clubs/{clubId}/edit(clubId=${club.id})}" >Edit</a>
+                                <div class="d-flex gap-2">
+                                    <a class="btn btn-outline-primary" th:href="@{clubs/{clubId}/edit(clubId=${club.id})}" >Edit</a>
+                                    <a class="btn btn-primary" th:href="@{clubs/{clubId}(clubId=${club.id})}" >View Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
