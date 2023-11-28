@@ -15,6 +15,11 @@
                             <p class="lead fw-normal text-muted mb-0">Groups of passionate near you</p>
                         </div>
                         <div class="row gx-5" >
+                            <div>
+                                <form th:action="@{/clubs/search}" class="form-inline my-lg-0 mb-3">
+                                    <input name="query" class="form-control mr-sm-2 mb-5" type="search" placeholder="Search running clubs" aria-label="Search" >
+                                </form>
+                            </div>
                             <div class="col-lg-6 mb-4" th:each="club :${clubs}">
                                 <div class="position-relative mb-3">
                                     <img alt="..." class="img-fluid image-club rounded-3 mb-3" th:src="${club.photoURL}"/>
