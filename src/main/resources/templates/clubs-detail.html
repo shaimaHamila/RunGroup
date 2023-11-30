@@ -31,7 +31,9 @@
                             <div class="small text-muted" th:text="${club.createdOn}" ></div>
                             <h2 class="card-title">About this club</h2>
                             <p class="card-text" th:text="${club.content}" ></p>
+                            <a class="btn btn-success" th:href="@{/events/{clubId}/new(clubId=${club.id})}" >Create An Event</a>
                             <a class="btn btn-danger" th:href="@{/clubs/{clubId}/delete(clubId=${club.id})}" >Delete</a>
+
                         </div>
                     </div>
                     <!-- Nested row for non-featured blog posts-->
