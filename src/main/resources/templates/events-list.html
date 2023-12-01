@@ -24,8 +24,8 @@
                                th:text="${event.name}" />
                         </div>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-outline-primary"  >Edit</a>
-                            <a class="btn btn-primary" th:href="@{events/{eventId}(eventId=${event.id})}" >View Event Details</a>
+                            <a class="btn btn-outline-primary" th:href="@{/events/{eventId}/edit(eventId=${event.id})}" >Edit</a>
+                            <a class="btn btn-primary" th:href="@{/events/{eventId}(eventId=${event.id})}" >View Event Details</a>
                         </div>
                     </div>
                 </div>

@@ -34,8 +34,9 @@
                         Event End Time:
                         <div class="small text-muted" th:text="${event.endTime}" ></div>
                         <p class="card-text" th:text="${event.type}" >Type: </p>
-                        <a class="btn btn-success" >Edit An Event</a>
-                        <a class="btn btn-danger" >Delete</a>
+                        <a class="btn btn-success" th:href="@{/events/{eventId}/edit(eventId=${event.id})}"  >Edit An Event</a>
+                        <a class="btn btn-danger" th:href="@{/events/{eventId}/delete(eventId=${event.id})}" >Delete</a>
+
                     </div>
                 </div>
 
