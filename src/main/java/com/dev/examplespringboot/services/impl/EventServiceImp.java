@@ -8,6 +8,12 @@ import com.dev.examplespringboot.repository.EventRepository;
 import com.dev.examplespringboot.services.EventService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.dev.examplespringboot.mapper.EventMapper.mapToEvent;
+import static com.dev.examplespringboot.mapper.EventMapper.mapToEventDto;
+
 @Service
 public class EventServiceImp implements EventService {
     private EventRepository eventRepository;
@@ -25,31 +31,10 @@ public class EventServiceImp implements EventService {
         eventRepository.save(newEvent);
     }
 
+    @Override
+    public List<EventDto> findAllEvents() {
+        List<Event> events = eventRepository.findAll();
+        return events.stream().map(event -> mapToEventDto(event)).collect(Collectors.toList());
+    }
 
-    public Event mapToEvent(EventDto eventDto){
-        Event event = Event.builder()
-                .id(eventDto.getId())
-                .name(eventDto.getName())
-                .photoURL(eventDto.getPhotoURL())
-                .type(eventDto.getType())
-                .startTime(eventDto.getStartTime())
-                .endTime(eventDto.getEndTime())
-                .updatedOn(eventDto.getUpdatedOn())
-                .creationOn(eventDto.getCreationOn())
-                .build();
-        return event;
-    }
-    public EventDto mapToEventDto(Event event){
-        EventDto eventDto = EventDto.builder()
-                .id(event.getId())
-                .name(event.getName())
-                .type(event.getType())
-                .photoURL(event.getPhotoURL())
-                .creationOn(event.getCreationOn())
-                .updatedOn(event.getUpdatedOn())
-                .endTime(event.getEndTime())
-                .startTime(event.getStartTime())
-                .build();
-        return eventDto;
-    }
 }

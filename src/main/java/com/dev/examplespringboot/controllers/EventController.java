@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class EventController {
     private EventService eventService;
@@ -15,6 +17,14 @@ public class EventController {
     @Autowired
     public EventController(EventService eventService) {
         this.eventService = eventService;
+    }
+
+    @GetMapping("/events")
+    public String eventList(Model model){
+        List<EventDto> events = eventService.findAllEvents();
+        model.addAttribute("events", events);
+        return "events-list";
+
     }
     @GetMapping("/events/{clubId}/new")
     public String createEventForm(@PathVariable("clubId") Long clubId, Model model){

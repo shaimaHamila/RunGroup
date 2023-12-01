@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+>
+<head>
+    <title>Event List</title>
+</head>
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+    <!-- Page Content-->
+    <section layout:fragment="body" class="p-5 ">
+        <div class="container>">
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Find Running Events</h1>
+                    <p class="lead fw-normal text-muted mb-0">Groups of passionate near you</p>
+                </div>
+                <div class="row gx-5" >
+                    <div class="col-lg-6 mb-4" th:each="event :${events}">
+                        <div class="position-relative mb-3">
+                            <img alt="..." class="img-fluid image-club rounded-3 mb-3" th:src="${event.photoURL}"/>
+                            <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#"
+                               th:text="${event.name}" />
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-outline-primary" >Edit</a>
+                            <a class="btn btn-primary"  >View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
