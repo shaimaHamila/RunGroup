@@ -5,13 +5,13 @@
 
 >
 <head>
-    <title>Create An Event</title>
+    <title>Edit An event</title>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
     <!-- Page Content-->
     <section layout:fragment="body" class="p-5 container">
-        <form role="form" method="post" th:action="@{/events/{clubId}(clubId=${clubId})}" th:object="${event}">
+        <form role="form" method="post" th:action="@{/events/{eventId}/edit(eventId=${eventId})}" th:object="${event}">
             <div class="form-row d-flex gap-3 flex-column ">
                 <div class="form-group col-md-6">
                     <label for="eventName">Name</label>
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-lg btn-primary mt-3">Create Event</button>
+            <button type="submit" class="btn btn-lg btn-primary mt-3">Edit Event</button>
         </form>
 
     </section>

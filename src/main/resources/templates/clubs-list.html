@@ -29,8 +29,8 @@
                                        th:text="${club.title}" />
                                 </div>
                                 <div class="d-flex gap-2">
-                                    <a class="btn btn-outline-primary" th:href="@{clubs/{clubId}/edit(clubId=${club.id})}" >Edit</a>
-                                    <a class="btn btn-primary" th:href="@{clubs/{clubId}(clubId=${club.id})}" >View Details</a>
+                                    <a class="btn btn-outline-primary" th:href="@{/clubs/{clubId}/edit(clubId=${club.id})}" >Edit</a>
+                                    <a class="btn btn-primary" th:href="@{/clubs/{clubId}(clubId=${club.id})}" >View Details</a>
                                 </div>
                             </div>
                         </div>
