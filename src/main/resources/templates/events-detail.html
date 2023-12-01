@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+
+>
+<head>
+    <title> Event details</title>
+</head>
+
+<!-- Page Content-->
+<section layout:fragment="body" class="p-5 container">
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder" th:text="${event.name}" ></h1>
+                <p class="lead mb-0">Shaima Hamila</p>
+            </div>
+        </div>
+    </header>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-8">
+                <!-- Featured blog post-->
+                <div class="card mb-4">
+                    <a href="#!"><img class="card-img-top" th:src="${event.photoURL}" alt="..." /></a>
+                    <div class="card-body">
+                        <h4 class="card-title"  >About this Event</h4>
+                        Event Start Time:
+                        <div class="small text-muted" th:text="${event.startTime}" ></div>
+                        Event End Time:
+                        <div class="small text-muted" th:text="${event.endTime}" ></div>
+                        <p class="card-text" th:text="${event.type}" >Type: </p>
+                        <a class="btn btn-success" >Edit An Event</a>
+                        <a class="btn btn-danger" >Delete</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">Road Runner</a></li>
+                                    <li><a href="#!">Trail</a></li>
+                                    <li><a href="#!">Marathon</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Side Widget</div>
+                    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</html>
