@@ -22,18 +22,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Clubs</a></li>
                     <li class="nav-item"><a class="nav-link" th:href="@{/clubs}">Find Clubs</a></li>
                     <li class="nav-item"><a class="nav-link" th:href="@{/events}">Find Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Directory</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Directory</a></li> -->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                            id="navbarDropdownBlog" role="button">Welcome</a>
                         <ul aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" th:href="@{/clubs/new}">Create Running Club</a></li>
-                            <li><a class="dropdown-item" href="blog-home.html">Sign in</a></li>
-                            <li><a class="dropdown-item" href="blog-home.html">Register</a></li>
-                            <li><a class="dropdown-item" href="blog-post.html">Logout</a></li>
+                            <li><a class="dropdown-item" th:href="@{/login}">Login</a></li>
+                            <li><a class="dropdown-item" th:href="@{/register}">Register</a></li>
+                            <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
